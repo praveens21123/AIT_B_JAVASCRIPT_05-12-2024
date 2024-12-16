@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statements</title>
+</head>
+<body>
+  
+  <script>
+    // Template Literals (Or) String Literals
+
+    const name = "Peter"
+    const age = 25
+    // const res = name + "'s age is " + age 
+    const res = `${name}'s age is ${age}`
+    document.write(res)
+
+    ///////////////////////////////////////////////////////
+    /* 
+    1.) If statement - if you want to execute some code based on some condition.
+    Syntax: if(condition){
+       code to execute
+    }
+    */
+    const age1 = 15
+
+    if(age1 >= 15){
+    console.log(`Student is allowed to admit high school, since his/her age is ${age}`);
+    }
+//////////////////////////////////////////////////
+ /* 
+ 2. if else statement - use else statement, when you want to execute the code every time, when if condition evalutes to false
+ Syntax: if(condition){
+          code to execute
+         }else{
+          code to execute
+         }
+ */
+ const age2 = 15
+    if(age2 >= 15){
+    console.log(`Student is allowed to admit high school, since his/her age is ${age2}`);
+    }else{
+      console.log(`Student is not allowed to admit high school, since his/her age is ${age2}`);
+    }
+//////////////////////////////////////////////
+/* 
+ 3. else if
+ Syntax: if(condition){
+          code to execute
+         }else if(condition){
+          code to execute
+         }else if(condition){
+          code to execute
+         }else{
+          code to execute
+         }
+ */
+
+    const age3 = 12
+    if(age3 >= 15){
+      console.log(`Student is allowed to admit high school, since his/her age is ${age3}`);
+    } else if(age3 >= 10 && age3 < 15 ){
+      console.log(`Student is allowed to admit middle school, since his/her age is ${age3}`);
+    } else{
+      console.log(`Student is allowed to admit Elementry school, since his/her age is ${age3}`);
+    }
+
+/////////////////////////////////////////////////////
+/* 
+Ternary Operator - A special operator that assign a value to a variable based on the some condition 
+Syntax: const variable_name = (condition) ? value1 : value2
+*/
+const stuAge = 15
+const studentStage = stuAge >= 15 ? "high School" : "Middle school"
+console.log(studentStage);
+/////////////////////////////////////////////////////
+
+/* 
+Switch Statement - It is type of conditional statement that execute an expression against multiple possible cases.
+
+syntax: 
+switch(Expression){
+case1 : code to execute
+break;
+case2 : code to execute
+break;
+case3 : code to execute
+break;
+.
+.
+.
+default:code to execute
+break;
+}
+*/
+// Example 1
+const day = ""
+
+switch(day){
+  case "monday": console.log("Happy Monday!");
+  break;
+  case "Tuesday": console.log("Happy Tuesday!");
+  break;
+  case "Wednesday": console.log("Happy wed");
+  break;
+  case "Thusday": console.log("Happy Thus!");
+  break;
+  case "Friday": console.log("Happy Friday!");
+  break;
+  case "Sat": console.log("Happy sat!");
+  break;
+  case "Sunday": console.log("Happy Sunday!");
+  break;
+  default : console.log("Something went wrong!");
+  break
+}
+// Example 2
+const mark = 0.5
+switch(true){
+  case (mark >=90) : console.log("A");
+  break;
+  case (mark >=80 && mark < 90) : console.log("B");
+  break;
+  case (mark >=70 && mark < 80) : console.log("C");
+  break;
+  case (mark >=60 && mark < 70) : console.log("D");
+  break;
+  case (mark >=50 && mark < 60) : console.log("E");
+  break;
+  default: console.log("Fail");
+  break;
+}
+  </script>
+  
+</body>
+</html>

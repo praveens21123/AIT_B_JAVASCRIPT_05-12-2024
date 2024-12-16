@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strings</title>
+</head>
+<body>
+  
+  <script>
+    /* 
+    Strings & String Methods
+    String - (i) Sequence of characters or collection of Characters, It must be enclosed by single or double quotes.
+             (ii) Strings are immutable, Can't change its original value.
+
+    2 Ways to create a string.
+       -> String Literal
+       -> String Constructor 
+    */
+
+    // 1.) String Literal
+    // const str = "Hello World"
+    // console.log(typeof str);
+    
+    // 2.) String Constructor
+  //   const newStr = new String("Hello")
+  //   console.log(newStr);
+  //  console.log(str.length);
+   
+    // for(let i = 0; i < str.length; i++){
+    //   console.log(str[i]);
+    // }
+
+    // String Methods
+     const word = "UI Development AIT AIT"
+
+    // 1.) indexOf() - returns index of first occurance of an given string.
+    console.log(word.indexOf("AIT"));
+
+    // 2.) lastIndexOf() - returns index of last occurance of an given string.
+    console.log(word.lastIndexOf("AIT"));
+
+    // 3.) charAt() - returns character of given index.
+    console.log(word.charAt(15));
+
+    // 4.) charCodeAt() - returns ASCII code of Character at the given index.
+    console.log(word.charCodeAt(4));
+
+    const str = "$*Hel234lo"
+    let newStr = ""
+
+    for(let i = 0; i < str.length; i++){
+      const x = str.charCodeAt(i)
+      if(x >= 65 && x <= 90 || x >= 97 && x <= 122){
+        newStr += str[i]
+      }
+    }
+    console.log(newStr);
+
+    // 5.) split() - It converts string into array.
+    console.log(word);
+    console.log(word.split(""));
+
+    // 6.) substring() - Extracting certain portion of the string.
+    console.log(word.substring(3, 14));
+
+    // 7.) replace() - Replace old word from new word
+    // console.log(word);
+    console.log(word.replace("AIT", "Course"));
+
+    // 8.) toLowercase() - It converts a string into lowercase
+    console.log(word.toLowerCase());
+
+      // 9.) toUppercase() - It converts a string into Uppercase
+      console.log(word.toUpperCase());
+
+      // 10.) Search() - It returns index of given character.
+      console.log(word.search("course"));
+  </script>
+</body>
+</html>
