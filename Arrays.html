@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays in JS</title>
+</head>
+<body>
+  <script>
+
+    /* 
+    Array - (i) It is collection of multiple values in an single variable. It is non-primitive datatype(referance datatype).
+           (ii) Every value is associated with numeric index starting with 0.
+    
+    syntax : const variable_Name : [value1, value2, value3, ........]
+    variable_Name[0] = value1
+    variable_Name[1] = value2
+
+    const arr = [20, "peter", true, [5, 10]]
+    */
+
+    /* 
+    There are 2 ways to create an array.
+    1.) Array constructor
+    2.) Array Literal (best Approach)
+    */
+
+    // 1.) Array constructor
+    const arr = new Array(1, 2, 3, "Peter")
+    console.log(arr);
+    console.log(typeof arr);
+
+    // 2.) Array Literal
+    const newArr = [1, 2, 3, 4]
+    const x = 10
+    console.log(newArr);
+    console.log(typeof newArr);
+
+    // To finding array by using Array constructor
+    console.log(Array.isArray(arr));
+
+    // const fruits = ["Apple", "Mango", "Orange", "Kiwi"]
+
+    // console.log(fruits);
+
+    // for(let i = 0; i < fruits.length; i++){
+    //   console.log(fruits[i]);
+    // }
+///////////////////////////////////////////////////////////
+    //------>>> Array Methods <<<-------//
+    const fruits = ["Apple", "Mango", "Orange", "Kiwi"]
+
+    // 1.) Push - Adding one or more values to the array in last position
+    fruits.push("Watermelon")
+    console.log(fruits);
+
+    // 2.) Pop - It deletes last element from an array
+    fruits.pop()
+    console.log(fruits);
+
+    // 3.) shift - It removes element from an array at beggining position
+    fruits.shift()
+    console.log(fruits);
+
+    // 4.) unShift - It adds elements at beggining position in an array.
+    fruits.unshift("Pineapple")
+    console.log(fruits);
+
+    // 5.) slice - To extracts the elements from an array
+    const sliceArr = fruits.slice(1, 3)
+    console.log(sliceArr);
+    console.log(fruits)
+
+    // 6.) Splice - To add or remove elements in between of an array elements.
+    fruits.splice(1, 2, "apple", "banana")
+    console.log(fruits);
+
+    // 7.) cancat - To merge two arrays.
+    const arr1 = [1, 2, 3]
+    const arr2 = [4, 5, 6]
+    const mergedArr = arr1.concat(arr2)
+    console.log(mergedArr);
+
+    // 8.) at - To access last index.
+    console.log(fruits.at(1));
+
+    // 9.) entries() - It returns index and elements of an array
+    // const x = fruits.entries()
+    // console.log(x);
+
+    // 10.) includes() - It returns boolean value(if element exist ? true : false) 
+    console.log(fruits);
+    console.log(fruits.includes("mango"));
+
+    //11.) Reverse() - It reverse the array elements.
+    console.log(fruits.reverse());
+
+    const str = "hello"
+    const revStr = str.split("").reverse().join("")
+    console.log(revStr);
+
+    // 12.) sort() - It sort the array elements based on ascii code.
+    const fruits1 = ["Mango", ["Orange", ["Kiwi"]], "Apple"]
+    console.log(fruits1.sort());
+
+    // 13.) flat() - It flats the nested array in an single array.
+    console.log(fruits1.flat(2));
+  </script>
+</body>
+</html>
