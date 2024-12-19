@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+<body>
+  
+  <script>
+    // Objects are non-primitive datatype. Object Holds multiple values in term of properties(Keys : Value) pair.
+    // Object is collection of an properties
+    // Object keys are always in string
+
+    // There are 3 ways to create a object
+    // 1.) Constuctor object - const VN = new Object()
+    // 2.) Object Literal - { key1 : value1, key2:value2, ........} (best Approch)
+    // 3.) Constuctor Function - 
+
+    // 1.) Constuctor object
+    const car1 = new Object()
+    car1.brand = "Ferrari"
+    car1.color = "Blue"
+    car1.price = 1000000
+    car1.hasAutoGear = true
+
+    console.log(car1);
+
+    // 2.) Object Literal
+
+    const car2 = {     // [[brand:BMW], [color:Black], ........]
+      brand : "BMW",
+      color: "Black",
+      price:300000,
+      releaseDate: "Aug 10"
+    }
+    const car3 = {     // [[brand:BMW], [color:Black], ........]
+      brand : "Honda",
+      color: "White",
+      price:400000,
+      releaseDate: "Apr 11"
+    }
+    // console.log(car2);
+
+    // //1.) Dot notation - .
+    // console.log(car2.brand);
+    // console.log(car2.price);
+
+    // // 2.) Bracket Notation - []
+    // console.log(car2["color"]);
+
+    // const x = "Date"
+    // console.log(car2["release" + x]);
+    // // console.log(`${car2.release}+ ${x}`);
+
+    // // -----------------------------------------------
+    // ----- Object methods -----//
+    // 1.) hasOwnProperty - 
+    console.log(car2.hasOwnProperty("fuel"));
+    console.log(car2.hasOwnProperty("color"));
+    
+
+    // 2.) Object.values() - 
+    console.log(Object.values(car2));
+    console.log(Object.values(car3));
+    
+
+    // 3.) Object.keys() - 
+    console.log(Object.keys(car2));
+
+    // 4.) Object.entries() - 
+    console.log(Object.entries(car2));
+
+    // 5.) Object.create() - It sets all properties to another object prototype.
+    const a = {
+      brand:"Apple"
+    }
+    const b = Object.create(a)
+    console.log(b);
+
+    // 6.) Object.assign() - It copies all the properties and paste in new object.
+
+    const x = {
+      price: "10K"
+    }
+    const y = Object.assign({}, x)
+    console.log(y);
+
+    // 7.) Object.freeze() - It not allow to add or modify the properties
+
+    const samsung = {
+      brand: "Samsung",
+      model: "S24 ultra",
+      price: 120000
+    }
+
+    console.log(samsung);
+    Object.freeze(samsung)
+    samsung.model = "S23 ultra"
+    samsung.color = "White"
+    console.log(samsung);
+
+    // 8. Object.seal() - It allows to modify the properties, but not to add new properties.
+
+    const apple = {
+      brand : "Apple",
+      model: "Iphone 16",
+      price: 90000
+    }
+    Object.seal(apple)
+
+    apple.model = "Iphone 16 pro"
+    apple.color = "Pink"
+    console.log(apple); 
+    ////////////////////////////////////////////////////////////////////
+  </script>
+</body>
+</html>

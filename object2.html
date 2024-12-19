@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object-2</title>
+</head>
+<body>
+
+  <script>
+      // Array Of Object
+      const car = [
+        {brand:"BMW", model:"x1", fuelType:"Petrol", price:"45L"},
+        {brand:"Honda", model:"civic", fuelType:"Petrol", price:"10L"},
+        {brand:"Ford", model:"X2", fuelType:"Petrol", price:"35L"},
+        {brand:"Porsche", model:"x4", fuelType:"Petrol", price:"85L"},
+        {brand:"Audi", model:"y1", fuelType:"Petrol", price:"65L"},
+      ]
+      // console.log(car[0].brand);
+      // console.log(car[1].brand);
+      // console.log(car[2].brand);
+      // console.log(car[3].brand);
+      // console.log(car[4].brand);
+
+      for(let i = 0; i < car.length; i++){
+        if( i == 1){
+          console.log(car[i].brand);
+        }
+      }
+      // /////////////////////////////////////////////
+      // Math Object
+      // console.log(Math.PI); //PI value.
+
+      //1.) Math.round() - It rounds the Integer Number if the Decimal Value lessthan .5, It returns the previous Integer Value, If Decimal Value Greaterthan .5, it returns next Integer value.
+      const price = 204.99
+      console.log(`The round of ${price} is ${Math.round(price)}`);
+
+      // 2.) Math.ceil() - It rounds the Integer Number of next Integer number, Even decimal value .01  
+      console.log(`The ceil of ${price} is ${Math.ceil(price)}`);
+
+      // 3.) Math.floor() - It always returns the previous Integer value, No matter decimal Number greaterthan .5
+      console.log(`The floor of ${price} is ${Math.floor(price)}`);
+
+      // 4.) Math.abs() - It converts nagative value to positive value. (abs-absolute)
+      const price2 = -9
+      console.log(`The Absolute of ${price2} is ${Math.abs(price2)}`);
+
+      // 5.) Math.pow() - It calculates the first arguement power of second arugement
+      console.log(`The Power of 10, 5 is ${Math.pow(10, 5)}`);
+
+      // 6.) Math.sqrt() - It returns the Squareroot Value.
+      console.log(`The SquareRoot of 16 is ${Math.sqrt(16)}`);
+
+      // 7.) Math.min() - It returns, Which is the least value.
+      console.log(`The minimum value of 2, 4, 9, 17, 6 is ${Math.min(2, 4, 9, 17, 6)}`);
+
+      // 8.) Math.max() - It returns the highest value
+      console.log(`The Maximum value of 2, 4, 9, 17, 6 is ${Math.max(2, 4, 9, 17, 6)}`);
+
+      // 9.) Math.Random() - It gives a random value between 0 to 1 
+      console.log(`The Random Number is ${Math.random() * 10000}`);
+
+      // 10.) Math.trunc() - It Ignore's the decimal numbers
+      console.log(`The Random Number is ${Math.trunc(Math.random() * 10000)}`);
+      ////////////////////////////////////////////////////////////////////////
+      // Date Object
+      const date = new Date()
+      console.log(date);
+
+      // 1.) Getting day
+      const day = date.getDay()
+      console.log(day);
+      
+      // 2.) Getting month
+      const month = date.getMonth()
+      console.log(month);
+
+      // 3.) Getting year
+      const year = date.getFullYear()
+      console.log(year);
+
+      // 4.) Getting minutes
+      const minute = date.getMinutes()
+      console.log(minute);
+
+      // 5.) Getting seconds
+      const second = date.getSeconds()
+      console.log(second);
+  </script>
+</body>
+</html>
