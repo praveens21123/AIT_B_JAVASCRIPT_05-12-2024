@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function in JS</title>
+</head>
+<body>
+  
+  <script>
+  /*   
+  Functions:
+  i) Function are bulding blocks of application, It holds a values and Local variable.
+  ii) It's a subroutine contains a set of statement/ Block of code, Which can perform some specific task.
+  iii) Function can be defined using function keyword followed by function Name and params.
+  
+   Rules Creating a Function:
+    1.) Function name shouldn't start with numbers.
+    2.) Function name shouldn't be a reserved keyword (i,e: new, var/let/const, function etc...)
+    3.) shouldn't contains special character other then underscore(_).
+  
+  Note : Until unless if we call the function, Function does nothing.
+  */ 
+
+ /* 
+  Function Declaration
+    Syntax : function function_name(){
+      Code to Execute
+    }
+    function_name()
+ */
+
+  /* 
+  1.)Function Without params  
+  Syntax:
+    function <function_name>(){
+      code to Execute  
+    }
+    <function_name>()
+  */
+  function sumHandler(){
+    // let x = 10
+    // let y = 20
+    // console.log(x + y);
+    alert("Hi There!")
+  }
+  sumHandler()
+  sumHandler()
+  sumHandler()
+
+  /* 
+    2.) Function with Params
+      syntax
+      function <function_name>(params1, params2........){ -> Parameter
+      
+      }
+      <function_name>(arguement1, arguement2.......) -> Arguement
+      */
+
+  let a = 11
+  let b = 4
+  function sumHandler(num1, num2){
+    const res = num1 + num2
+    console.log(res);
+  }
+  sumHandler(5, 3)
+  sumHandler("hello", 60)
+  sumHandler(a, b)
+  ///////////////////////////////////////////////
+  //3.) return keyword
+
+  function multiply(num1, num2){
+     const res = num1 * num2
+     return res
+  }
+  const x = 10 + multiply(2, 3)
+  console.log(x);
+
+  // /////////////////////////
+  // Helper function/ utility function
+  function cutFruit(fruit){
+    return fruit * 4
+  }
+
+  function juiceProcessor(apple, orange){
+   const pieceOfApple = cutFruit(apple)
+   const pieceOfOrange = cutFruit(orange)
+
+   console.log(`Juice with ${pieceOfApple} pieces of apple and ${pieceOfOrange} pieces of orange`);
+  }
+  juiceProcessor(2, 3)
+  ////////////////////////////////////////////////////////////////////////
+  // Default parameters and values
+
+  function printNum(num1, num2, num3 = 3){
+    console.log(num1, num2, num3);
+  }
+  printNum(1, 2)
+  </script>
+</body>
+</html>

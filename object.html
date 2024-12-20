@@ -34,12 +34,6 @@
       price:300000,
       releaseDate: "Aug 10"
     }
-    const car3 = {     // [[brand:BMW], [color:Black], ........]
-      brand : "Honda",
-      color: "White",
-      price:400000,
-      releaseDate: "Apr 11"
-    }
     // console.log(car2);
 
     // //1.) Dot notation - .
@@ -55,20 +49,20 @@
 
     // // -----------------------------------------------
     // ----- Object methods -----//
-    // 1.) hasOwnProperty - 
-    console.log(car2.hasOwnProperty("fuel"));
-    console.log(car2.hasOwnProperty("color"));
+    // 1.) hasOwnProperty - It returns boolean value, If the property exists it returns true, 
+    console.log(car2.hasOwnProperty("fuel"));  //false
+    console.log(car2.hasOwnProperty("color")); //true
     
 
-    // 2.) Object.values() - 
+    // 2.) Object.values() - It store all the values in array formate.
     console.log(Object.values(car2));
     console.log(Object.values(car3));
     
 
-    // 3.) Object.keys() - 
+    // 3.) Object.keys() - It store all the keys in array formate.
     console.log(Object.keys(car2));
 
-    // 4.) Object.entries() - 
+    // 4.) Object.entries() - It store all the keys & values in nested array formate.
     console.log(Object.entries(car2));
 
     // 5.) Object.create() - It sets all properties to another object prototype.
