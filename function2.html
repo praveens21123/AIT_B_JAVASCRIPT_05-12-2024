@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>click me</button>
+  
+  <script>
+  /* 
+  2.) Function Expression / Anonymous function
+   -> JS Allows as to store a function in a variable, Later we can use the variable as function name.
+   -> Anonymous Function is used to passing a call-back function, creating a closure and IIFE.
+      syntax: 
+          const variable_name = function(param1, params2....){
+          // Code to Execute
+          }
+          variable_name(arg1, arg2,.........)
+  */
+ const a = 10
+  const sumTwoNum = function(x, y){
+    return x + y
+  }
+  console.log(sumTwoNum(10, 20));
+////////////////////////////////////////////////////////////////
+/* 
+3.) Arrow Function - Introduced in ES6(2015) It help as to write a function in cleaner way.
+syntax: 
+  const variable_name = (params1,...) => {
+    //  code to Execute
+  }
+  variable_name(arg1,.........)
+*/
+
+const multiply = (num1, num2) => {
+  return num1 * num2
+}
+// const multiply = (num1, num2) => num1 * num2 
+// const multiply =  num1 => num1  
+console.log(multiply(2, 3));
+
+const btn = document.querySelector("button")
+// btn.addEventListener("click", ()=>{
+//   console.log("Hello World!", this); 
+// })
+btn.addEventListener("click", function(){
+  console.log("Hello World!", this);
+})
+
+/////////////////////////////////////////////////////
+// Comparing two referance datatype.
+// console.log({} == {}); //false
+
+const x = {
+  a: 1,
+  b: 2
+}
+const y = {
+  a: 1,
+  b: 2
+}
+// console.log(obj1 == obj2); // false
+
+ const compareTwoObj = (obj1, obj2) => {
+    const obj1Key = Object.keys(obj1) // ['a', 'b']
+    console.log(obj1Key);
+    let isTrue = true
+    for(let i = 0; i < obj1Key.length; i++){
+      if(obj1[obj1Key[i]] === obj2[obj1Key[i]]){  // obj1["a"] = 1
+        isTrue = true
+      } else {
+        isTrue = false
+      }
+    }
+    console.log(isTrue);
+ }
+compareTwoObj(x, y)
+
+
+
+  </script>
+</body>
+</html>

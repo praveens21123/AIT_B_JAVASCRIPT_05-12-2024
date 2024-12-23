@@ -20,10 +20,15 @@
     3.) shouldn't contains special character other then underscore(_).
   
   Note : Until unless if we call the function, Function does nothing.
+
+  // Basic Function in javascript
+  1.) Function Declaration
+  2.) Function Expression / Anonymous function
+  3.) Arrow Function
   */ 
 
  /* 
-  Function Declaration
+1.)  Function Declaration
     Syntax : function function_name(){
       Code to Execute
     }
@@ -55,8 +60,7 @@
       
       }
       <function_name>(arguement1, arguement2.......) -> Arguement
-      */
-
+  */
   let a = 11
   let b = 4
   function sumHandler(num1, num2){
@@ -91,11 +95,25 @@
   juiceProcessor(2, 3)
   ////////////////////////////////////////////////////////////////////////
   // Default parameters and values
-
-  function printNum(num1, num2, num3 = 3){
+  function printNum(num1, num2, num3 = num2 * 2){
     console.log(num1, num2, num3);
   }
   printNum(1, 2)
+  ////////////////////////////////////////////
+/*  
+  Nested Function :
+    1.) A function have one or more inner function, These nested functions are scope of outer function.
+    2.) Inner function can have access the variables and params of Outer Function 
+    3.) But Outer function can't access the variables and params of inner function.
+*/
+  function greet(fullName){  // fullName = "Peter"
+  let x = 10
+    function sayHello(){
+      console.log(`Hello ${fullName} ${x}`);
+    }    
+    sayHello()
+  }
+  greet("Peter")
   </script>
 </body>
 </html>
