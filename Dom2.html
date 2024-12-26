@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom-2</title>
+</head>
+<body>
+
+  <figure id="figure">
+    <img src="https://www.achieversit.com/assets/images/logo-white.png" alt="AIT">
+    <figcaption>AchieversIT</figcaption>
+  </figure>
+
+  <ul class="list-one">
+    <li class="course">React</li>
+    <li class="course">Angular</li>
+    <li class="course">VueJS</li>
+  </ul>
+
+  <ul class="list-two">
+    <li class="course">NodeJS</li>
+    <li class="course">NextJS</li>
+    <li class="course">Fastify</li>
+  </ul>
+  <script>
+    // Dom Selectors
+
+    // 1.) getElementById -
+    document.getElementById('figure').style.border = "2px solid red"
+
+    // 2.) getElementsByClassName -
+    document.getElementsByClassName("list-one")[0].style.border = "2px dashed green"
+
+    // 3.) getElementsByTagName -
+    const x = document.getElementsByTagName("figcaption")[0]
+    x.style.fontSize = "xx-large"
+    x.style.color = "blue"
+
+    // 4.) querySelector() - 
+    document.querySelector('.list-two .course').style.color = "orangeRed"
+
+    // 5.) querySelectorAll() -
+  document.querySelectorAll('.list-one .course')[0].style.color = "Yellow"
+  document.querySelectorAll('.list-one .course')[1].style.color = "green"
+  document.querySelectorAll('.list-one .course')[2].style.color = "blue"
+
+  const list = document.querySelectorAll('.list-one .course')
+  console.log(list);
+  
+  const colors = ['orange', 'green', 'blue']
+
+  for(let i = 0; i < list.length; i++){
+    list[i].style.color = colors[i]
+  }
+  //////////////////////////////
+
+  
+  
+   
+
+    
+    
+
+  </script>
+</body>
+</html>

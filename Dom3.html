@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM-3</title>
+</head>
+<style>
+  .list{
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin: 5px 10px;
+  }
+
+</style>
+<body>
+  <ul type="none">
+
+  </ul>
+  <script>
+    // Creating element by using strings and Template literals.
+
+  //---> Data
+  const data = [
+    {name:"Peter", age:25},
+    {name:"Jessica", age:24},
+    {name:"Tony", age:23},
+  ]
+
+  // Inserting one element into the DOM
+  // let element = `<div class='container'>
+  //   <h2>${data[0].name}</h2>
+  //   </div>`
+  // const body = document.querySelector("body")
+  // body.innerHTML = element
+
+  //---------->><<------------//
+  // Inserting multiple elements in DOM
+  // Example : 1 
+  let ele2 = ""
+  for(let i = 0; i < data.length; i++){
+    ele2 += `<h2>${data[i].name}</h2>`
+  }
+  console.log(ele2);
+
+  const parentEle = `<div>${ele2}</div>`
+
+  const bodyEle = document.querySelector("body")
+  bodyEle.innerHTML = parentEle
+
+  console.log(bodyEle);
+  //---------->><<------------//
+  // Inserting multiple elements in DOM
+  // Example : 2
+
+  //---> Data
+  const names = ["Peter", "Jessica", "Tony"]
+
+  const ulEle = document.querySelector("ul")
+  ulEle.style.border = "1px solid black"
+
+  if(names.length >= 3){
+    ulEle.style.display = "flex"
+    ulEle.style.justifyContent = "center"
+  }
+  let ele = ""
+  for(let i = 0; i < names.length; i++){
+    ele += `<li class='list'>${names[i]}</li>`
+  }
+  ulEle.innerHTML = ele
+
+  </script>
+</body>
+</html>
