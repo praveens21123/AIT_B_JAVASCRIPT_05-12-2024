@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom-4</title>
+</head>
+<style>
+  .container{
+    display : flex;
+  }
+  .flexitems{
+    flex:1
+  }
+  .box{
+    border: 1px solid black;
+    padding: 20px;
+  }
+
+  body{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:20px;
+  }
+  
+</style>
+<body>
+  
+  <!-- <section class="container box">
+    <div class="flexitems box">Peter</div>
+    <div class="flexitems box">Elon</div>
+    <div class="flexitems box">Devid</div>
+    <div class="flexitems box">Tony</div>
+  </section> -->
+
+  <script>
+    // Creating parentElement using dom methods
+    const parentEle = document.createElement("section")
+
+    // Setting Attributes to the parent tag!
+    parentEle.setAttribute("class", "container box")
+    parentEle.setAttribute("style", "background-color:red")
+
+    // Removing Attributes to the parent tag!
+    parentEle.removeAttribute("style")
+    console.log(parentEle);
+
+    // Creating childElement using dom methods
+    const div1 = document.createElement("div")
+    const div2 = div1.cloneNode()
+    const div3 = div1.cloneNode()
+    const div4 = div1.cloneNode()
+
+     // Creating content using dom methods
+    const text1 = document.createTextNode("Peter")
+    const text2 = document.createTextNode("Elon")
+    const text3 = document.createTextNode("Devid")
+    const text4 = document.createTextNode("Tony")
+    // console.log(text4);
+
+     //Inserting content inside the child element.
+    div1.appendChild(text1)
+    div2.appendChild(text2)
+    div3.appendChild(text3)
+    div4.appendChild(text4)
+
+    //Inserting child elements inside the parent element.
+    parentEle.appendChild(div1)
+    parentEle.appendChild(div2)
+    parentEle.appendChild(div3)
+    parentEle.appendChild(div4)
+
+    // Setting Attributes for child elements
+    div1.setAttribute("class", "flexitems box")
+    div2.setAttribute("class", "flexitems box")
+    div3.setAttribute("class", "flexitems box")
+    div4.setAttribute("class", "flexitems box")
+    
+    // const body = document.getElementsByTagName("body")[0]
+    // body.appendChild(parentEle)
+    ///////////////////////////////////////////////
+
+    // --> Data
+    const productData = [
+      {
+        id:1,
+        title:"Sony WH-1000XM3 ",
+        image: "https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692947383286-714WUJlhbLS._SL1500_.jpg",
+        price: 773
+      },
+      {
+        id:2,
+        title:"Microsoft Xbox ",
+        image: "https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692255251854-xbox.jpg",
+        price: 373
+      },
+      {
+        id:3,
+        title:"Logitech G733",
+        image: "https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692257709689-logitech heaphone.jpg",
+        price: 573
+      },
+      {
+        id:4,
+        title:"Sony WH-1000XM5",
+        image: "https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692941008275-headphone3.jpg",
+        price: 7773
+      }
+    ]
+
+
+    const bodyEle = document.querySelector("body")
+
+    function displayProducts(products){
+      let ele = ""
+      for(let i = 0; i< products.length; i++){
+        ele += `<div class="ProductContainer">
+          <img src='${products[i].image}' width='200px'/>
+          <h2>${products[i].title}</h2>
+          <h6>${products[i].price}</h6>
+          </div>`
+      }
+      bodyEle.innerHTML = ele
+    }
+    displayProducts(productData)
+  </script>
+</body>
+</html>
