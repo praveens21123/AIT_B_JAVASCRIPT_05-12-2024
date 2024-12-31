@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <style>
+    /* .container{
+      padding: 20px;
+      border: 1px solid black;
+    } */
+    .container button{
+      padding: 10px 20px;
+      color: white;
+      background-color: palevioletred;
+      border: none;
+      border-radius: 5px;
+    }
+    ul li {
+      padding: 20px 40px;
+      border: 1px solid black;
+      list-style: none;
+      width: 150px;
+    }
+    .highlight{
+      background-color: red;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Events in Javascript</h2>
+    <button id="btn">Click</button><br>
+    <!-- <button id="stop">stop timer</button><br><br>
+    <button id="event" class="eventBtn">Event Click</button><br>
+    <form method="get">
+    <input type="text"><br>
+    <button type="submit">submit</button>
+  </form> -->
+
+
+  <ul>
+    <li>item-1</li>
+    <li>item-2</li>
+    <li>item-3</li>
+    <li>item-4</li>
+    <li>item-5</li>
+  </ul>
+  </div>
+  
+  <script>
+    // Events - Event is an action, which is triggered by end user, to interact with web or mobile page
+
+  /* 
+    1.) Global Event
+      -> click
+      -> dbclick
+
+    2.) Mouse Event
+      -> mouseover
+      -> mouseenter
+      -> mouseleave
+
+    3.) Keyboard Events
+      -> keyup
+      -> keydown
+
+    4.) page Events
+      -> scroll
+      -> load
+      -> resize
+    
+    5.) Form Events
+      -> submit
+      -> focus
+      -> blur
+      -> onchange    
+*/
+    //1.) Inline Event Handler
+ /* <button onclick="clickHandler()">Click-2</button>
+    function clickHandler(){
+      alert("Hii There!")
+    } */
+
+
+    // 2.) AddEventListener()
+    /*  
+    syntax
+    Element.addEventListener("event", callBack_Function)
+    */
+
+    // const btn = document.querySelector('button')
+    // function clickHandler(){
+    //   alert("Hello World!")
+    // }
+
+    // function hoverHandler(){
+    //   console.log("Button Hovered!");
+    // }
+
+    // btn.addEventListener("click", clickHandler)
+    // btn.addEventListener("mouseover", hoverHandler)
+
+    // // Removing the Event.
+    // btn.removeEventListener("mouseover", hoverHandler)
+
+    // Adding Event through arrow function
+    // btn.addEventListener("mouseleave", ()=>{
+    //   console.log("Mouse leave!");
+    // })
+
+    // ///////////////////////////////////////////////
+    //Timers
+    // setTimeout() - 
+    // Syntax : setTimeout(()=>{}, Time in millisecond)  // 1s = 1000 millisecond
+
+  //  const timer = setTimeout(()=>{
+  //     console.log("Hi from timer");
+  //   }, 3000)
+
+  //   const stopBtn = document.getElementById("stop")
+
+  //   stopBtn.addEventListener("click", () => {
+  //     console.log("Stop Button was clicked"); 
+  //     clearTimeout(timer)
+  //   })
+
+  //   // setInterval() - 
+  //   // Syntax : setInterval(()=>{}, Time in millisecond)  // 1s = 1000 millisecond
+
+  //   let i = 0
+  //   const int = setInterval(()=>{
+  //    i++
+  //    console.log(i);
+
+  //    if( i >= 5){
+  //     clearInterval(int)
+  //    }
+  //   }, 1000)
+    ////////////////////////////////////////////////
+    // Event Object - Contains information about it, such as the type of event, the target element, and additional data related to the event. It is automatically passed to event handler functions and provides methods and properties to control event behavior.
+
+    // function formHandler(event){
+    //   event.preventDefault()
+    // }
+    // const eventBtn = document.getElementById("event")
+    // eventBtn.addEventListener("click", (event)=>{
+    //   console.log(event);
+    // })
+    // const form = document.querySelector("form")
+    // form.addEventListener("submit", formHandler)
+    //////////////////////////////////////////////////
+
+    // Event Propagation - which events are triggered in the DOM, starting with the capturing phase (from the root to the target), followed by the target phase, and then the bubbling phase (from the target back to the root).
+
+    const btnClk = document.getElementById("btn")
+    btn.addEventListener("click", (event)=>{
+      console.log(event);
+      
+      console.log("button was clicked!");
+    })
+
+    const div = document.querySelector(".container")
+    div.addEventListener("click", ()=>{
+      console.log("div was clicked!");
+    })
+    /////////////////////////////////////////////////////////
+
+    // Event Delegation - Where a single event listener is added to a parent element to manage events for its child elements, taking advantage of event propagation, particularly the bubbling phase, to handle dynamically added elements efficiently.
+
+    // const listItems = document.querySelectorAll("ul li")
+    
+    // for(let i = 0; i < listItems.length; i++){
+    //   listItems[i].addEventListener("click", (e)=>{
+    //     e.target.classList.toggle("highlight")
+    //   })
+    // }
+    
+    const ul = document.querySelector("ul")
+    ul.addEventListener("click", (e)=>{
+      e.target.closest("li").classList.toggle("highlight")
+    })
+  </script>
+</body>
+</html>
