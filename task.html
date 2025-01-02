@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task</title>
+</head>
+<body>
+  <form action="">
+    <input type="text" id="nameValue"/>
+    <button type="submit">Submit</button>
+  </form>
+
+  <span>Count :<span id="inputCount">0</span></span>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlygWcz51gyDexlstejSgZZ2LSxqF4rBz3wQ&s" alt="Lap-1">
+
+
+  <script>
+   const image1 = document.querySelector("img")
+   image1.addEventListener("mouseover", (event)=>{
+      image1.outerHTML = `<img src="https://static.vecteezy.com/system/resources/previews/033/501/763/non_2x/laptop-with-blue-smoke-on-a-black-background-ai-generated-free-photo.jpeg" alt="Lap-2">`
+      
+   })
+   
+    // const nameValue = document.getElementById("nameValue")
+  
+    // nameValue.addEventListener("keyup", (event)=>{
+    //   let count = 0
+    //   let value = event.target.value
+    //   count = value.length
+    //   console.log(count);
+    //   document.getElementById("inputCount").innerHTML = count
+    // })
+    
+  </script>
+</body>
+</html>
