@@ -25,21 +25,48 @@ function nameHandler(){
      nameErr.textContent = "Name is Required"
      return false
   }
+  if(!name.match(/^[A-Z][a-z]{2,}\s[a-zA-Z]{1,}$/)){
+    btn.disabled = true
+    nameErr.textContent = "FullName is Required"
+    return false
+  }
   btn.disabled = false
   nameErr.innerHTML = `<ion-icon name="checkmark-circle"></ion-icon>`
   return true 
 }
 
-// Adding event for input field
+// Function to handler the emailValue field
+function emailHandler(){
+  let email = emailVal.value
+  
+  if(email.length === 0){
+     btn.disabled = true
+     emailErr.textContent = "Email is Required"
+     return false
+  }
+  if(!email.match(/^[a-z]{3,}[0-9]*\@{1}[a-z]{3,}\.[a-z]{2,5}$/)){
+    btn.disabled = true
+    emailErr.textContent = "Invalid Email Address"
+    return false
+  }
+  btn.disabled = false
+  emailErr.innerHTML = `<ion-icon name="checkmark-circle"></ion-icon>`
+  return true 
+}
+
+// Adding event for name input field
 nameVal.addEventListener("keyup", nameHandler)
 nameVal.addEventListener("blur", nameHandler)
+
+// Adding event for name input field
+emailVal.addEventListener("keyup", emailHandler)
+emailVal.addEventListener("blur", emailHandler)
 
 // Adding event for form
 form.addEventListener("submit", (event)=>{
    event.preventDefault()
 
-  if(!nameHandler()){
+  if(!nameHandler() && !emailHandler()){
     return false
   }
-  
 })
