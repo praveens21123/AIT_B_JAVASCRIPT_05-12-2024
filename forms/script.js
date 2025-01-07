@@ -65,8 +65,12 @@ emailVal.addEventListener("blur", emailHandler)
 // Adding event for form
 form.addEventListener("submit", (event)=>{
    event.preventDefault()
+   nameHandler()
 
-  if(!nameHandler() && !emailHandler()){
-    return false
-  }
+  // if(nameHandler() && !emailHandler()){
+  //   return false
+  // }
+  
+  // console.log("hello");
+  
 })

@@ -16,9 +16,8 @@ console.log(phnRes);
 
 
 //Regex Patterns 
-
 /* 
-Brackets [] - Define Range of the character 
+---> Brackets [] - Define Range of the character 
 
  [abc] -> Occurs only a,b & c
  [^abc] -> Except a,b & c
@@ -27,7 +26,7 @@ Brackets [] - Define Range of the character
  [a-zA-Z0-9] -> except special character
  [0-9] -> Occurs 0 to 9
 
- Quatifiers -> Repeatations
+---> Quatifiers -> Repeatations
 
  []+ -> 0 or 1 times
  []? -> 1 or more times
@@ -36,18 +35,18 @@ Brackets [] - Define Range of the character
  []{n,} -> min n times, max it could be anything.
  []{n,m} -> min n times, max m times
 
-// Meta characters
+---> Meta characters
 
  \w -> [a-zA-Z0-9_]
  \W -> [^a-zA-Z0-9_]
  \d -> [0-9]
  \D -> [^0-9]
 
- Special characters
- \#, \$, \* .....
+---> Special characters
+ \#, \$, \* etc.....
  \s - space
 
- Modifiers 
+---> Modifiers 
   g - globally it checks the charactes
   i - case insencetive (ignore)
   m - MultiLines
